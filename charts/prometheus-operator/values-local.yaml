@@ -1,0 +1,44 @@
+alertmanager:
+  ingress:
+    enabled: true
+    annotations:
+       kubernetes.io/ingress.class: nginx
+       kubernetes.io/tls-acme: "true"
+    hosts: 
+       - alertmanager.aikashev.tk
+    tls: 
+     - secretName: alertmanager.aikashev.tk-tls
+       hosts:
+       - alertmanager.aikashev.tk
+  
+grafana:
+  ingress:
+    enabled: true
+    annotations:
+       kubernetes.io/ingress.class: nginx
+       kubernetes.io/tls-acme: "true"      
+    hosts:
+       - grafana.aikashev.tk
+    tls:
+     - secretName: grafana.aikashev.tk-tls
+       hosts:
+       - grafana.aikashev.tk
+
+coreDns:
+  enabled: false
+
+kubeDns:
+  enabled: true
+  
+prometheus:
+  ingress:
+    enabled: true
+    annotations:
+       kubernetes.io/ingress.class: nginx
+       kubernetes.io/tls-acme: "true"
+    hosts: 
+       - prometheus.aikashev.tk 
+    tls:
+       - secretName: prometheus.aikashev.tk-tls
+         hosts:
+           - prometheus.aikashev.tk
