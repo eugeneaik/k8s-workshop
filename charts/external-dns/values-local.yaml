@@ -1,0 +1,8 @@
+domainFilters: 
+   - aikashev.tk
+
+policy: sync   
+
+rbac:
+  create: true
+  
